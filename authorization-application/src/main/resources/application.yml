@@ -1,0 +1,58 @@
+server:
+  port: 1039
+  servlet:
+    application-display-name: authorization-server
+  tomcat:
+    threads:
+      max: 300
+      min-spare: 80
+    accept-count: 100
+    connection-timeout: 10000
+    max-connections: 10000
+  compression:
+    enabled: true
+    min-response-size: 1024
+    mime-types: application/json
+  max-http-header-size: 2048
+
+spring.main.allow-bean-definition-overriding: true
+strategy:
+  name: monolotic
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/oauthdb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&useUnicode=yes&characterEncoding=UTF-8
+    username: vispax
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      minimum-idle: 2
+      maximum-pool-size: 30
+      pool-name: vispax_pool
+      auto-commit: true
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+        useLocalSessionState: true
+        rewriteBatchedStatements: true
+        cacheResultSetMetadata: true
+        cacheServerConfiguration: true
+        elideSetAutoCommits: true
+        maintainTimeStats: false
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+exception.log.mode: active
+
+
+
+
+

@@ -1,0 +1,13 @@
+/target
+/authorization-application/target
+/authorization-dto/target
+/authorization-agent/target
+/.settings
+/.idea
+/authorization-agent/.settings
+/authorization-agent/authorization-agent.iml
+/authorization-dto/.settings
+/authorization-dto/authorization-dto.iml
+/authorization-application/.settings
+/authorization-application/authorization-application.iml
+/vix-authorization-server.iml

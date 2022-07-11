@@ -1,0 +1,6 @@
+dbuser= barlinedbuser
+dbpass= B@roL!ne13981398@Mamut
+ip=     37.152.181.247
+port=   1036
+winuser =Administrator
+passWin= Pel@kpower123

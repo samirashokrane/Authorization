@@ -1,0 +1,24 @@
+INSERT INTO `oauthdb`.`oauth_client_details` (`client_id`, `client_secret`, `web_server_redirect_uri`, `scope`, `access_token_validity`, `refresh_token_validity`, `resource_ids`, `authorized_grant_types`, `authorities`, `additional_information`, `autoapprove`) VALUES ('mobile', '{bcrypt}$2a$10$gPhlXZfms0EpNHX0.HHptOhoFD1AoxSr/yUIdTqA8vtjeP4zi0DDu', 'http://localhost:8080/code', 'READ,WRITE', 500000, 20000000, 'ftp-server,wallet-server,resource-server,profile-server,file-server,crypto-server,oms-server,baseinfo-server,sms-server,mail-server,backoffice-server,ipg-server', 'authorization_code,password,refresh_token,implicit', NULL, '{}', NULL);
+
+
+INSERT INTO `oauthdb`.`permission` (`id`, `name`) VALUES (1, 'CREATE_DATA');
+INSERT INTO `oauthdb`.`permission` (`id`, `name`) VALUES (2, 'DELETE_DATA');
+INSERT INTO `oauthdb`.`permission` (`id`, `name`) VALUES (3, 'READ_DATA');
+INSERT INTO `oauthdb`.`permission` (`id`, `name`) VALUES (4, 'UPDATE_DATA');
+
+INSERT INTO `oauthdb`.`role` (`id`, `role_name`) VALUES (2, 'ADMIN');
+INSERT INTO `oauthdb`.`role` (`id`, `role_name`) VALUES (6, 'CALL_CENTER');
+INSERT INTO `oauthdb`.`role` (`id`, `role_name`) VALUES (5, 'CHIEF_OFFICER');
+INSERT INTO `oauthdb`.`role` (`id`, `role_name`) VALUES (7, 'FINANCIAL_MANAGER');
+INSERT INTO `oauthdb`.`role` (`id`, `role_name`) VALUES (3, 'ORDER_MANAGER');
+INSERT INTO `oauthdb`.`role` (`id`, `role_name`) VALUES (4, 'REPORT_VIEWER');
+INSERT INTO `oauthdb`.`role` (`id`, `role_name`) VALUES (1, 'USER');
+
+
+INSERT INTO `oauthdb`.`user` (`id`, `username`, `password`, `activationCode`, `email`, `enabled`, `accountNonExpired`, `credentialsNonExpired`, `accountNonLocked`) VALUES (1, 'admin@vispax.com', '{bcrypt}$2a$10$ODGwrk2ufy5d7T6afmACwOA/6j6rvXiP5amAMt1YjOQSdEw44QdqG', 'bYNdI8oSRV+FpvsB6d0Dsg==', 'admin@vispax.com', 1, 1, 1, 1);
+
+INSERT INTO `oauthdb`.`user_role` (`role_id`, `user_id`) VALUES (2, 1);
+
+
+INSERT INTO `vispaxdb`.`profile_user` (`id`, `is_deleted`, `version`, `created_by`, `created_date`, `last_modification_date`, `modified_by`, `birth_date`, `email`, `first_name`, `kyc_state`, `last_name`, `mobile_number`, `national_code`, `otp_state`, `token`, `user_state`, `username`, `user_status`) VALUES (1000, b'0', 0, 'anonymousUser', '2022-02-27 12:51:38.000000', '2022-01-26 11:24:16.000000', NULL, '14000998', 'admin@vispax.com', 'محمد', 'NOT_IDENTIFIED', 'نوروزی', 'admin@vispax.com', '0000000000', 'OTP_VERIFIED', NULL, 'PROFILE_COMPLETE', 'admin@vispax.com', 'ACTIVE');
+
